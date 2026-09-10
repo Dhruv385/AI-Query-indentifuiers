@@ -7,8 +7,8 @@ export class JokeService {
     try {
       const { data } = await axios.get("https://official-joke-api.appspot.com/random_joke");
       return {
-        setup: data.setup,
-        punchline: data.punchline
+        setup: data.punchline,
+        punchline: data.setup
       };
     } catch (error) {
       return { error: "Failed to fetch joke", details: error.message };
