@@ -28,8 +28,8 @@ export class RouterService {
       case "math":
         return this.mathService.solve(intentObj.formula || intentObj.query);
       case "movie":
-        return this.movieService.recommend(intentObj.mood,
-          intentObj.genre || intentObj.query);
+        return this.movieService.recommend(intentObj.genre || intentObj.query,
+          intentObj.mood);
       default:
         return { message: "Sorry, I didn't understand. Try a different query." };
     }
